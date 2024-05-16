@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lily Heltzer-Stiles | Linktree</title>
-    <!-- Favicon -->
-    <link rel="icon" href="https://raw.githubusercontent.com/psyferlab/lilytree/master/image.png" type="image/x-icon" />
-    <!-- Font Awesome icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <!-- Core theme CSS -->
+    <title>Photo Grid</title>
     <link rel="stylesheet" href="style.css">
-  </head>
-
-  <body>
-    <!-- Parallax Pixel Background Animation -->
-    <section class="animated-background">
-      <div id="stars1"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
-    </section>
-    <!-- End of Parallax Pixel Background Animation -->
-
-    <a id="profilePicture" href="#popup">
-      <img src="https://raw.githubusercontent.com/psyferlab/lilytree/master/image.png" alt="Profile Picture"></img>
-    </a>
-
-    <div id="userName">
-      Lily Heltzer-Stiles
-    </div>
-
-
-<center>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 10px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        
+        .grid img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .grid img.enlarged {
+            transform: scale(2);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <center>
         <div style="background: #fff; border-radius: 20px; padding: 40px; max-width: 700px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); text-align: center; line-height: 1.8; margin: 20px;">
             <h2 style="margin-top: 0; color: #2d5f73; font-size: 2.5em; letter-spacing: 1px;">Art</h2>
             <p style="margin: 15px 0; color: #555; font-size: 1.1em;"><strong>Abstract Painter, Mixed Media Artist</strong></p>
@@ -43,13 +43,24 @@
                 <li style="margin-bottom: 14px;">Impressionism</li>
                 <li style="margin-bottom: 14px;">Nature and patterns</li>
             </ul>
-            <div style="margin: 20px 0; color: #ccc; font-size: 0.8em;">~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~ ~*~</div>
+        </div>
+        <div class="grid">
+            <img src="https://raw.githubusercontent.com/psyferlab/lilytree/master/091A6ACD-1EEA-4C1F-95CC-E0F5405100E7.jpeg" alt="Photo 1">
+            <img src="https://raw.githubusercontent.com/psyferlab/lilytree/master/457108F8-BE63-4D9B-ABE2-AD17DDFBF8C5.jpeg" alt="Photo 2">
+            <img src="https://raw.githubusercontent.com/psyferlab/lilytree/master/DFA41D6D-D7AA-40A8-85E2-A4844BB31FE8.jpeg" alt="Photo 3">
+            <img src="https://raw.githubusercontent.com/psyferlab/lilytree/master/565C7759-C51E-4427-A918-BCA02F15A4C4.jpeg" alt="Photo 4">
+            <img src="https://raw.githubusercontent.com/psyferlab/lilytree/master/B98445E2-103D-46F9-950C-0D86E47CF308.jpeg" alt="Photo 5">
+            <img src="https://raw.githubusercontent.com/psyferlab/lilytree/master/F51708B9-D13B-4E99-9CAA-F796A77B772A.jpeg" alt="Photo 6">
+            <!-- Add more photos as needed -->
         </div>
     </center>
-    <div id="hashtag">
-      <br>
-      <br>
-      ❤ ❤ ❤ ❤ ❤ ❤
-    </div>
-  </body>
+
+    <script>
+        document.querySelectorAll('.grid img').forEach(img => {
+            img.addEventListener('click', () => {
+                img.classList.toggle('enlarged');
+            });
+        });
+    </script>
+</body>
 </html>
